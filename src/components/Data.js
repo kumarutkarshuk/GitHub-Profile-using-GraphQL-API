@@ -1,64 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const token = "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";
 const Data = (props) => {
-  const [userData, setUserData] = useState({});
-  const [repos, setRepos] = useState([]);
+  // console.log(props.username);
 
-  
-  const query = `
-    query {
-      user(login: "${props.username}") {
-        login
-        name
-        avatarUrl
-      }
-      viewer {
-        repositories(last: 5) {
-          nodes {
-            name
-          }
-        }
-      }
+  const [username, setUsername] = useState('');
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const apiUrl = 'https://api.github.com/graphql';
+  const token = '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';
+
+  const graphqlQuery = `
+  query ($username: String!) {
+    user(login: $username) {
+      login
+      name
+      bio
     }
+  }
   `;
 
- 
-  const headers = {
-    'Authorization': `Bearer ${token}`,
+  const makeGitHubGraphQLRequest = async (username) => {
+    const graphqlQuery = `
+      query ($username: String!) {
+        user(login: $username) {
+          login
+          name
+          bio
+          avatarUrl
+        }
+      }
+    `;
+
+    try {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      };
+      setLoading(true);
+      const response = await axios.post(apiUrl, { query: graphqlQuery, variables: { username } }, { headers });
+      setLoading(false);
+      const responseData = response.data.data.user;
+      // console.log(responseData);
+      setUserData(responseData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   useEffect(() => {
-    axios
-      .post('https://api.github.com/graphql', { query }, { headers })
-      .then((response) => {
-        const data = response.data.data;
-        setUserData(data.user);
-        setRepos(data.viewer.repositories.nodes);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    makeGitHubGraphQLRequest(props.username);
+  }, [props.username]);
 
   return (
     <div>
-      <h1>User Details</h1>
-      <div>
-        <img src={userData.avatarUrl} alt="User Avatar" height="50%" width="50%"/>
-        <p>Username: {userData.login}</p>
-        <p>Name: {userData.name}</p>
-      </div>
+      {userData && !loading && (
+        <div>
+          <p>Username: {userData.login}</p>
+          <p>Name: {userData.name}</p>
+          <p>Bio: {userData.bio}</p>
+          <img src={userData.avatarUrl}/>
+        </div>
+      )}
 
-      <h1>Recent Repositories</h1>
-      <ul>
-        {repos.map((repo) => (
-          <li key={repo.name}>{repo.name}</li>
-        ))}
-      </ul>
+      {!userData && !loading && <p>No Data Found</p>}
+
+      {loading && <div class="spinner"></div>}
     </div>
-  );
-};
+  )
+}
 
 export default Data;
