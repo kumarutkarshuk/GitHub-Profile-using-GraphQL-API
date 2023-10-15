@@ -1,13 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Heatmap from "./Heatmap"
+
+
 
 const Data = (props) => {
   // console.log(props.username);
 
-  const [username, setUsername] = useState('');
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [repositories, setRepositories] = useState([]);
+  const [contributionData, setContributionData] = useState(null);
   const apiUrl = 'https://api.github.com/graphql';
   const token = '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';
 
@@ -29,6 +33,22 @@ const Data = (props) => {
           name
           bio
           avatarUrl
+          repositories(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
+            nodes {
+              name
+            }
+          }
+          contributionsCollection {
+            contributionCalendar {
+              totalContributions
+              weeks {
+                contributionDays {
+                  date
+                  contributionCount
+                }
+              }
+            }
+          }
         }
       }
     `;
@@ -41,9 +61,17 @@ const Data = (props) => {
       setLoading(true);
       const response = await axios.post(apiUrl, { query: graphqlQuery, variables: { username } }, { headers });
       setLoading(false);
+
       const responseData = response.data.data.user;
-      // console.log(responseData);
+      // console.log(responseData.contributionsCollection.contributionCalendar.weeks);
+
+      if(!responseData){
+        setUserData(null);
+      }
+      
       setUserData(responseData);
+      setRepositories(responseData.repositories.nodes);
+      setContributionData(responseData.contributionsCollection.contributionCalendar);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -56,16 +84,36 @@ const Data = (props) => {
   return (
     <div>
       {userData && !loading && (
+        <div className='bg-[#1E2A47] rounded-xl p-6'>
+
+          <div className='flex'>
+
+            <img src={userData.avatarUrl} className='w-[20%] h-[20%] rounded-full'/>
+            <div>
+              <p>{userData.name}</p>
+              <p>{userData.login}</p>
+              <p>{userData.bio}</p>
+              <ul>
+                {repositories.map((repo, index) => (
+                <li key={index}>{repo.name}</li>
+                ))}
+            </ul>
+          <p>Total Contributions: {contributionData.totalContributions}</p>
+            </div>
+
+
+
+          </div>
+          
+          
+      
         <div>
-          <p>Username: {userData.login}</p>
-          <p>Name: {userData.name}</p>
-          <p>Bio: {userData.bio}</p>
-          <img src={userData.avatarUrl}/>
+        </div>
+              <Heatmap contributionData={contributionData}/>
         </div>
       )}
 
       {!userData && !loading && <p>No Data Found</p>}
-
       {loading && <div class="spinner"></div>}
     </div>
   )
