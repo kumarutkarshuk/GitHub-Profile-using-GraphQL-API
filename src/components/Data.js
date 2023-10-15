@@ -99,7 +99,7 @@ const Data = (props) => {
             </div>
 
             <div className='flex flex-col items-center'>
-              <p className='mb-5'>Total Contributions: {contributionData.totalContributions}</p>
+              <p className='mb-5'>Total Contributions: <span className='text-green-200'>{contributionData.totalContributions}</span></p>
               <h1 className='mb-5'>Most Recent Repos:</h1>
               <ul>
                 {repositories.map((repo, index) => (
