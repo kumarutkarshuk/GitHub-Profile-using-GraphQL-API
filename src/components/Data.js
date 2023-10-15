@@ -85,17 +85,17 @@ const Data = (props) => {
   }, [props.username]);
 
   return (
-    <div className='flex justify-center w-[110%] md:w-[135%] min-h-[75%] '>
+    <div className='flex justify-center w-[110%] lg:w-[135%] min-h-[75%] '>
 
       {userData && !loading && (
-        <div className='bg-[#1E2A47] rounded-xl p-8 grid grid-cols-1 md:grid-cols-2'>
+        <div className='bg-[#1E2A47] rounded-xl p-8 grid grid-cols-1 lg:grid-cols-2'>
 
-            <div className='flex flex-col items-center md:items-start flex-shrink'>
+            <div className='flex flex-col items-center lg:items-start flex-shrink'>
               <img src={userData.avatarUrl} className='w-[50%] aspect-auto rounded-full mb-3'/>
-              <p className='font-extrabold text-2xl text-center md:text-left'>{userData.name}</p>
+              <p className='font-extrabold text-2xl text-center lg:text-left'>{userData.name}</p>
               <a href={'https://github.com/'+ props.username} target='_blank' className='text-blue-300 underline text-sm'>@{userData.login}</a>
-              <p className='text-sm mt-3 mb-3 text-center md:text-left'>{userData.bio}</p>
-              <Heatmap contributionData={contributionData}/>
+              <p className='text-sm mt-3 mb-3 text-center lg:text-left'>{userData.bio}</p>
+              {/* <Heatmap contributionData={contributionData}/> */}
             </div>
 
             <div className='flex flex-col items-center'>
