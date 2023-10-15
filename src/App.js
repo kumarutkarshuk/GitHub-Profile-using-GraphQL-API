@@ -47,9 +47,9 @@ function App() {
                               rounded-md px-3 py-2 text-base" onClick={clickHandler} >Search</button>
         </div>
 
-        <div className="w-[150%]">
-          {username && <Data username={username}/>}
-        </div>
+        
+        {username && <Data username={username}/>}
+
 
       </div>
       
