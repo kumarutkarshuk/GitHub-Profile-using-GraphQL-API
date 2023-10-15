@@ -39,7 +39,7 @@ function App() {
         
         <div className="bg-[#1E2A47] flex justify-evenly items-center rounded-xl w-full h-14 md:p-1 gap-2">
           <div className="hidden md:block"><AiOutlineSearch/></div>
-          <input type="text" placeholder="Enter a GitHub username..." className=" bg-inherit w-[75%] focus:outline-none text-base h-[100%] 
+          <input type="text" placeholder="Enter a GitHub username..." className=" bg-inherit w-[75%] focus:outline-none text-sm h-[100%] 
           md:text-lg" onChange={changeHandler}
             onKeyDown={keyHandler}
           />
