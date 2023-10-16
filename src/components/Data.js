@@ -100,9 +100,12 @@ const Data = (props) => {
               
             </div>
 
-            <div className='flex flex-col items-center lg:items-start pl-10'>
+            <div className='flex flex-col items-center lg:items-start lg:pl-10'>
               
-              <h1 className='mb-5 text-center font-extrabold'>Most Recent Repos:</h1>
+              <div className='w-full'>
+                <h1 className='mb-5 text-left font-extrabold'>Most Recent Repos:</h1>
+              </div>
+              
 
               <div className='flex flex-col gap-2 w-full'>
                   {repositories.map((repo, index) => (
@@ -119,7 +122,7 @@ const Data = (props) => {
             </div>
             
             <div className='lg:col-span-2 flex flex-col justify-center items-center'>
-            <p className='mb-5 text-center font-extrabold'>Total Contributions: <span className='text-[#40c463]'>
+            <p className='mb-5 text-center font-extrabold '>Total Contributions: <span className='text-[#40c463]'>
               {contributionData.totalContributions}</span></p>
               <Heatmap contributionData={contributionData}/>  
             </div>
