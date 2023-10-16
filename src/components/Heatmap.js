@@ -13,7 +13,7 @@ const Heatmap = (props) => {
 
     const panelColors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'];
     return (
-         <div>
+         <div className='flex justify-center lg:justify-start w-full mt-2'>
            <Calendar values={values} until={new Date()} panelColors={panelColors}/>
          </div>
     )
