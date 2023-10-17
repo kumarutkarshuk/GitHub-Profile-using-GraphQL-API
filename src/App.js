@@ -1,8 +1,6 @@
 import Data from "./components/Data";
-
 import {AiOutlineSearch, AiFillGithub} from "react-icons/ai";
 import '@fontsource/space-mono';
-
 import { useState } from "react";
 
 
