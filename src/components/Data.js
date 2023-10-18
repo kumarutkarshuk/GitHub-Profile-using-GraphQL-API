@@ -83,7 +83,7 @@ const Data = (props) => {
 
             <Repos repositories={repositories} username={props.username}/>
             
-            <Heatmap contributionData={contributionData}/>  
+            <Heatmap contributionData={contributionData}/>
     
         </div>
       )}
