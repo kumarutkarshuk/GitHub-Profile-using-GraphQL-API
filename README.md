@@ -3,9 +3,10 @@
 * Link to the deployed react app: [GitQL](https://gitql.vercel.app/)
 
 ## Task Details
-1. 
-2. 
-3. 
+1. Built an interface which lets users enter their username and retreive data like their avatar, name, bio, most recent repos, total number of contributions and heatmap.
+2. Used GitHub GraphQL API to retrieve the data.
+3. Used React to build the web app.
+4. Used Tailwind to style the web app and made the interface responsive.
 
 ## Demo Video :
 
@@ -14,11 +15,11 @@
   Your browser does not support the video tag.
 </video>
 
-## Screenshots
-
+## Screenshot
+![Screenshot 1](./src/assets/Screenshot_2.png)
 
 ## Challenges Faced
-* Heatmap Library
+* Finding a functional Heatmap Library
 
 ## References:
 1. [Heatmap](https://github.com/haripo/react-github-contribution-calendar)
@@ -27,4 +28,4 @@
 
 ### Link to the Demo Video:
   1. [GitQL Demo on GDrive](https://drive.google.com/file/d/1BM30XhvZaPWu4bgNZxAPYU-AL4Yw395k/view?usp=drive_link)
-  2. [GitQL Demo on Youtube]()
+  2. [GitQL Demo on Youtube](https://youtu.be/YaalQyB2yck)
