@@ -10,15 +10,17 @@
 4. To make it look good and work well on different screens, I've used Tailwind for styling.
 
 ## Bonus Feature
-Made a Chrome extension also.
+**Made a Chrome extension**
+
+![Chrome Extension](./src/assets/Screenshot_2.png)
 
 ## Demo Video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fKi3SmYoFTc?si=ufUx1s2Wi5nlp2lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Link to the Demo Video: [GitQL Demo](https://www.youtube.com/watch?v=fKi3SmYoFTc)
 
 
 ## Screenshot
 ![Screenshot](./src/assets/Screenshot.png)
+
 
 ## Challenges Faced
 1. Finding a functional Heatmap Library.
@@ -30,5 +32,5 @@ Made a Chrome extension also.
 2. [React icons](https://react-icons.github.io/react-icons/)
 3. [CSS Loader](https://10015.io/tools/css-loader-generator)
 
-* Link to the Demo Video: [GitQL Demo](https://www.youtube.com/watch?v=fKi3SmYoFTc)
+
 
