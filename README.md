@@ -1,6 +1,6 @@
 # Task ID: GitHub Profile using GraphQL API
 
-* Link to the deployed react app: [GitQL](https://gitql.vercel.app/)
+* Link to the deployed React app: [GitQL](https://gitql.vercel.app/)
 
 ## Task Details
 
