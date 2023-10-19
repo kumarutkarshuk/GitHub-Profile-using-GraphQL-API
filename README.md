@@ -3,10 +3,11 @@
 * Link to the deployed react app: [GitQL](https://gitql.vercel.app/)
 
 ## Task Details
-1. Built an interface which lets users enter their username and retreive data like their avatar, name, bio, most recent repos, total number of contributions and heatmap.
-2. Used GitHub GraphQL API to retrieve the data.
-3. Used React to build the web app.
-4. Used Tailwind to style the web app and made the interface responsive.
+
+1. GitQL is a user-friendly platform where folks can type in their GitHub username and get details like their picture, name, bio, latest projects, total contributions, and a visual representation of their activity.
+2. I have used GitHub's GraphQL API to gather this information.
+3. The whole thing was built using React, a popular web development tool.
+4. To make it look good and work well on different screens, I've used Tailwind for styling.
 
 ## Demo Video :
 
