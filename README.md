@@ -9,24 +9,26 @@
 3. The whole thing was built using React, a popular web development tool.
 4. To make it look good and work well on different screens, I've used Tailwind for styling.
 
-## Demo Video :
+## Bonus Feature
+Made a Chrome extension also.
 
-<video controls width="100%" height="300">
-  <source src="./src/assets/GitQL_Demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+## Demo Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fKi3SmYoFTc?si=ufUx1s2Wi5nlp2lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ## Screenshot
-![Screenshot 1](./src/assets/Screenshot_2.png)
+![Screenshot](./src/assets/Screenshot.png)
 
 ## Challenges Faced
-* Finding a functional Heatmap Library
+1. Finding a functional Heatmap Library.
+2. Understanding GraphQL.
+3. Creating a Chrome extension.
 
 ## References:
 1. [Heatmap](https://github.com/haripo/react-github-contribution-calendar)
 2. [React icons](https://react-icons.github.io/react-icons/)
 3. [CSS Loader](https://10015.io/tools/css-loader-generator)
 
-### Link to the Demo Video:
-  1. [GitQL Demo on GDrive](https://drive.google.com/file/d/1BM30XhvZaPWu4bgNZxAPYU-AL4Yw395k/view?usp=drive_link)
-  2. [GitQL Demo on Youtube](https://youtu.be/YaalQyB2yck)
+* Link to the Demo Video: [GitQL Demo](https://www.youtube.com/watch?v=fKi3SmYoFTc)
+
