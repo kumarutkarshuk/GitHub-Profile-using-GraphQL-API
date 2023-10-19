@@ -2,6 +2,24 @@
 
 * Link to the deployed react app: [GitQL](https://gitql.vercel.app/)
 
+## Task Details
+1. 
+2. 
+3. 
+
+## Demo Video :
+
+<video controls width="100%" height="300">
+  <source src="./src/assets/GitQL_Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+## Screenshots
+
+
+## Challenges Faced
+* Heatmap Library
+
 ## References:
 1. [Heatmap](https://github.com/haripo/react-github-contribution-calendar)
 2. [React icons](https://react-icons.github.io/react-icons/)
