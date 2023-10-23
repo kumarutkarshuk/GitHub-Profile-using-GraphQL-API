@@ -61,6 +61,7 @@ const Data = (props) => {
       if(!responseData){
         setUserData(null);
       }
+      
       setUserData(responseData);
       setRepositories(responseData.repositories.nodes);
       setContributionData(responseData.contributionsCollection.contributionCalendar);

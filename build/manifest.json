@@ -1,0 +1,12 @@
+{
+    "name": "GitQL",
+    "version": "1.0.0",
+    "description": "Search for GitHub accounts",
+    "manifest_version": 3,
+    "author": "Utkarsh Kumar",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "GitQL"
+    }
+}
+  
