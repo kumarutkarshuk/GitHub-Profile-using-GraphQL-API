@@ -18,8 +18,9 @@ const Data = (props) => {
 
   const makeGitHubGraphQLRequest = async (username) => {
     
+    //String! means that the variable is non-nullable and is a string, meaning that it must always be provided in the query.
     const graphqlQuery = `
-      query ($username: String!) {
+      query ($username: String!) { 
         user(login: $username) {
           login
           name
