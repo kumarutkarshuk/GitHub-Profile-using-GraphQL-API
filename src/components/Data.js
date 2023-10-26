@@ -13,7 +13,7 @@ const Data = (props) => {
   const [repositories, setRepositories] = useState([]);
   const [contributionData, setContributionData] = useState(null);
   const apiUrl = 'https://api.github.com/graphql';
-  const token = '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';
+  const token = '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';
 
 
   const makeGitHubGraphQLRequest = async (username) => {
