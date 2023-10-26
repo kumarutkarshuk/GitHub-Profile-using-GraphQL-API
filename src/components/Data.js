@@ -14,7 +14,7 @@ const Data = (props) => {
   const [contributionData, setContributionData] = useState(null);
   const apiUrl = 'https://api.github.com/graphql';
   const token = process.env.REACT_APP_API_KEY;
-  console.log(token)
+  // console.log(token)
 
 
   const makeGitHubGraphQLRequest = async (username) => {
